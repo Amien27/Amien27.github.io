@@ -5,11 +5,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Amien | Aspiring Actuary</title>
   <style>
-    body {
+       body {
       margin: 0;
       font-family: Arial, Helvetica, sans-serif;
-      background: #ffe4ec;
       color: #3a2a33;
+      background-color: #ffe4ec;
+      background-image:
+        radial-gradient(circle at 8% 10%, rgba(255, 150, 185, 0.55) 0, transparent 30%),
+        radial-gradient(circle at 92% 18%, rgba(196, 181, 253, 0.55) 0, transparent 30%),
+        radial-gradient(circle at 88% 88%, rgba(253, 224, 171, 0.65) 0, transparent 30%),
+        radial-gradient(circle at 8% 90%, rgba(167, 226, 230, 0.55) 0, transparent 30%);
+      background-attachment: fixed;
     }
     header {
       text-align: center;
@@ -46,6 +52,45 @@
 .role { font-weight: bold; margin: 6px 0 10px; }
 .card ul { padding-left: 20px; margin: 0 0 12px; }
 .card li { margin-bottom: 6px; line-height: 1.5; }
+
+        body::before {
+      content: "";
+      position: fixed;
+      top: 14%;
+      left: -60px;
+      width: 220px;
+      height: 220px;
+      border-radius: 50%;
+      background: rgba(194, 24, 91, 0.10);
+      z-index: -1;
+    }
+    body::after {
+      content: "";
+      position: fixed;
+      bottom: 12%;
+      right: -50px;
+      width: 200px;
+      height: 200px;
+      border-radius: 36px;
+      transform: rotate(25deg);
+      background: rgba(124, 77, 255, 0.12);
+      z-index: -1;
+    }
+    header::before {
+      content: "";
+      position: absolute;
+      top: 40px;
+      right: 12%;
+      width: 90px;
+      height: 90px;
+      border: 6px solid rgba(255, 183, 77, 0.55);
+      border-radius: 50%;
+    }
+    header { position: relative; overflow: hidden; }
+
+    @media (max-width: 600px) {
+      body::before, body::after, header::before { display: none; }
+    }
   </style>
 </head>
 <body>
